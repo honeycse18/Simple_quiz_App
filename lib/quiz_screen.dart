@@ -20,24 +20,40 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 251, 163, 213),
+        //  backgroundColor: Color.fromARGB(255, 251, 163, 213),
+
         body: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "Quiz App",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24),
-              ),
-              _questionWidget(),
-              _answerList(),
-              _nextButton(),
-            ],
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/img/3.jpg'),
+              fit: BoxFit.fill,
+            ),
+          ),
+          //  margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 40,
+                ),
+                Image.asset(
+                  'assets/img/qs.png',
+                  scale: 4.0,
+                ),
+                _questionWidget(),
+                SizedBox(
+                  height: 10,
+                ),
+                _answerList(),
+                SizedBox(
+                  height: 20,
+                ),
+                _nextButton(),
+              ],
+            ),
           ),
         ),
       ),
@@ -50,7 +66,7 @@ class _QuizScreenState extends State<QuizScreen> {
         Text(
           "Question ${currentQuestionIndex + 1}/${questionList.length.toString()}",
           style: TextStyle(
-            color: Colors.black,
+            color: Color.fromARGB(221, 0, 51, 75),
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
@@ -61,9 +77,9 @@ class _QuizScreenState extends State<QuizScreen> {
         Container(
           width: double.infinity,
           alignment: Alignment.center,
-          padding: EdgeInsets.all(32),
+          padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: Colors.black,
+            color: Color.fromARGB(221, 0, 51, 75),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Text(
@@ -128,7 +144,7 @@ class _QuizScreenState extends State<QuizScreen> {
           child: Text(isLastQuestion ? "submit" : "Next Question"),
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
-            primary: Colors.black,
+            primary: Color.fromARGB(221, 0, 51, 75),
             onPrimary: Colors.white,
           ),
           onPressed: () {
@@ -149,12 +165,13 @@ class _QuizScreenState extends State<QuizScreen> {
     if (score >= questionList.length * 0.6) {
       isPassed = true;
     }
-    String title = isPassed ? "Passed" : "Failed";
+    String title = isPassed ? "Congratulations! You are Passed" : "Failed";
     return AlertDialog(
+      backgroundColor: Color.fromARGB(255, 30, 223, 248),
       title: Text(
         title + "| Score is $score ",
         style: TextStyle(
-          color: isPassed ? Colors.green : Colors.redAccent,
+          color: isPassed ? Colors.black : Color.fromARGB(255, 224, 15, 0),
         ),
       ),
       content: ElevatedButton(
@@ -166,7 +183,15 @@ class _QuizScreenState extends State<QuizScreen> {
             selectedAnswer = null;
           });
         },
-        child: Text("Restart"),
+        style: ElevatedButton.styleFrom(
+            shape: const StadiumBorder(),
+            backgroundColor: Color.fromARGB(221, 0, 51, 75),
+            shadowColor: Colors.black,
+            ),
+        child: Text(
+          "Restart",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
     );
   }

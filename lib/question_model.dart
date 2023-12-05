@@ -24,7 +24,7 @@ List<Question> getQuestion() {
   ));
 
   list.add(Question(
-    "Who developed the Flutter Framework\n and continues to maintain it today?",
+    "Who developed the Flutter Framework and continues to maintain it today?",
     [
       Answer("Facebook", false),
       Answer("Microsoft", false),
@@ -52,7 +52,7 @@ List<Question> getQuestion() {
     ],
   ));
   list.add(Question(
-    "When building for iOS, Flutter is\n restricted to an __ compilation strategy",
+    "When building for iOS, Flutter is restricted to an __ compilation strategy",
     [
       Answer("AOT", true),
       Answer("JIT", false),
@@ -70,7 +70,7 @@ List<Question> getQuestion() {
     ],
   ));
   list.add(Question(
-    "Access to a cloud database through Flutter\n is available through which service?",
+    "Access to a cloud database through Flutter is available through which service?",
     [
       Answer("SQLite", false),
       Answer("Firebase Database", true),
@@ -79,7 +79,7 @@ List<Question> getQuestion() {
     ],
   ));
   list.add(Question(
-    "What element is used as an identifier\n for components when programming in Flutter?",
+    "What element is used as an identifier for components when programming in Flutter?",
     [
       Answer("Widgets", false),
       Answer("Serial", false),
@@ -97,7 +97,7 @@ List<Question> getQuestion() {
     ],
   ));
   list.add(Question(
-    "What type of Flutter animation allows\n you to represent real-world behavior?",
+    "What type of Flutter animation allows you to represent real-world behavior?",
     [
       Answer("Physics-based", true),
       Answer("Maths-based", false),
